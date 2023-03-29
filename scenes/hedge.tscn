@@ -1,32 +1,32 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/hedge.gd" type="Script" id=1]
-[ext_resource path="res://assets/hedge.png" type="Texture" id=2]
+[ext_resource path="res://assets/hedge.png" type="Texture2D" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 88, 15.25 )
+size = Vector2( 88, 15.25 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 87.25, 15.5 )
+size = Vector2( 87.25, 15.5 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 87.75, 15 )
+size = Vector2( 87.75, 15 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 87.5, 15.5 )
+size = Vector2( 87.5, 15.5 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 37.5, 4 )
+size = Vector2( 37.5, 4 )
 
-[node name="hedge" type="KinematicBody2D"]
+[node name="hedge" type="CharacterBody2D"]
 scale = Vector2( 2, 2 )
 script = ExtResource( 1 )
 
-[node name="left" type="Sprite" parent="."]
+[node name="left" type="Sprite2D" parent="."]
 position = Vector2( -130, 0 )
 texture = ExtResource( 2 )
 
-[node name="right" type="Sprite" parent="."]
+[node name="right" type="Sprite2D" parent="."]
 position = Vector2( 130, 0 )
 scale = Vector2( -1, 1 )
 texture = ExtResource( 2 )

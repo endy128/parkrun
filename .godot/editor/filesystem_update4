@@ -1,0 +1,4 @@
+res://scenes/main.tscn
+res://scenes/text_theme.tres
+res://scenes/Control.tscn
+res://scenes/HUD.gd

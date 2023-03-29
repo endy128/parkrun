@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
 var gravity = 300
 var move_vector = Vector2.ZERO 
@@ -20,7 +20,8 @@ func _process(delta):
 		direction = 1
 		move_vector.x += move_strength
 	
-	move_and_slide(move_vector)	
+	set_velocity(move_vector)
+	move_and_slide()	
 		
 	if (global_position.x - 36 - gravity*delta > -180 && global_position.x + 36 + gravity*delta < 180):
 
