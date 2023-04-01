@@ -27,7 +27,7 @@ func game_over():
 func new_game():
 	Game_Vars.score = 0
 	$HUD.show_message("")
-	get_node('/root/main').update_score(Game_Vars.score)
+	update_score(Game_Vars.score)
 	$dog.start($dog_start_pos.position)
 	get_node("hedges/hedge").start($hedge_start_pos.position)
 	get_node("hedges/hedge2").start($hedge2_start_pos.position)

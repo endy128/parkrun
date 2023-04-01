@@ -13,10 +13,10 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if(end_game != true):
-		if(Input.is_action_pressed("left")):
+		if(Input.is_action_pressed("left") or get_node('/root/main/HUD/touch_left').is_pressed()):
 			direction = -1
 			move_vector.x += -move_strength 
-		if(Input.is_action_pressed("right")):
+		if(Input.is_action_pressed("right") or get_node('/root/main/HUD/touch_right').is_pressed()):
 			direction = 1
 			move_vector.x += move_strength
 		set_velocity(move_vector)
