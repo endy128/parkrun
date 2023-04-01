@@ -4,19 +4,19 @@
 [ext_resource type="Texture2D" uid="uid://vvxdreibt5hs" path="res://assets/hedge.png" id="2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3pbaq"]
-size = Vector2(180, 36)
+size = Vector2(178.5, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fg6jg"]
-size = Vector2(180, 36)
+size = Vector2(178, 33)
 
 [sub_resource type="RectangleShape2D" id="5"]
 size = Vector2(76, 4)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p0eu1"]
-size = Vector2(176.5, 32)
+size = Vector2(175, 27.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yldq5"]
-size = Vector2(176, 32)
+size = Vector2(174, 29)
 
 [node name="hedge" type="CharacterBody2D"]
 scale = Vector2(2, 2)
@@ -34,11 +34,11 @@ texture = ExtResource("2")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-130, 0)
+position = Vector2(-130.75, 0)
 shape = SubResource("RectangleShape2D_3pbaq")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(130, 0)
+position = Vector2(131, 0)
 shape = SubResource("RectangleShape2D_fg6jg")
 
 [node name="point" type="Area2D" parent="."]
@@ -49,9 +49,9 @@ position = Vector2(0.5, 0)
 shape = SubResource("5")
 
 [node name="left2" type="CollisionShape2D" parent="."]
-position = Vector2(-130.25, 0)
+position = Vector2(-131, -0.25)
 shape = SubResource("RectangleShape2D_p0eu1")
 
 [node name="right2" type="CollisionShape2D" parent="."]
-position = Vector2(130, 0)
+position = Vector2(131, -0.5)
 shape = SubResource("RectangleShape2D_yldq5")

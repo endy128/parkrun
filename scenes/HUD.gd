@@ -34,3 +34,8 @@ func update_score(score):
 func _on_start_button_pressed():
 	$StartButton.hide()
 	start_game.emit()
+
+func _input(event):
+	if event is InputEventKey:
+		if event.pressed and $StartButton.is_visible_in_tree():
+			_on_start_button_pressed()

@@ -1,4 +1,6 @@
+Sprite2D
 TouchScreenButton
+ColorRect
 AnimationPlayer
 CollisionShape2D
 Marker2D

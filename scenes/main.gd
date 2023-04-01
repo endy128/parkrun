@@ -26,6 +26,7 @@ func game_over():
 	
 func new_game():
 	Game_Vars.score = 0
+	Game_Vars.scroll_speed = 150
 	$HUD.show_message("")
 	update_score(Game_Vars.score)
 	$dog.start($dog_start_pos.position)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dg8l1b2e5njpa"]
+[gd_scene load_steps=16 format=3 uid="uid://dg8l1b2e5njpa"]
 
 [ext_resource type="PackedScene" path="res://scenes/floor.tscn" id="1"]
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_phm6y"]
@@ -7,9 +7,11 @@
 [ext_resource type="Script" path="res://scenes/dog.gd" id="4"]
 [ext_resource type="Script" path="res://scenes/HUD.gd" id="7_uwhdw"]
 [ext_resource type="Theme" uid="uid://d7ql06mdxoqr" path="res://scenes/text_theme.tres" id="8_veox6"]
+[ext_resource type="Texture2D" uid="uid://cel7ooekjjtnu" path="res://assets/chevron-left.svg" id="8_xfxlk"]
+[ext_resource type="Texture2D" uid="uid://dwd6ulgr8blle" path="res://assets/chevron-right.svg" id="9_4mvag"]
 
 [sub_resource type="Gradient" id="Gradient_talwd"]
-colors = PackedColorArray(0, 0, 0, 0.498039, 0, 0, 0, 0.498039)
+colors = PackedColorArray(0, 0, 0, 0.313726, 0, 0, 0, 0.313726)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_1cc1e"]
 gradient = SubResource("Gradient_talwd")
@@ -22,7 +24,7 @@ repeat = 2
 size = Vector2(160, 170)
 
 [sub_resource type="Gradient" id="Gradient_85ig8"]
-colors = PackedColorArray(0, 0, 0, 0.498039, 0, 0, 0, 0.498039)
+colors = PackedColorArray(0, 0, 0, 0.313726, 0, 0, 0, 0.313726)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_r8tnl"]
 gradient = SubResource("Gradient_85ig8")
@@ -40,8 +42,6 @@ script = ExtResource("1_phm6y")
 [node name="background" type="Sprite2D" parent="."]
 position = Vector2(-1, 3)
 scale = Vector2(2, 2)
-
-[node name="Camera2D" type="Camera2D" parent="background"]
 
 [node name="floors" type="Node" parent="."]
 
@@ -97,23 +97,35 @@ theme = ExtResource("8_veox6")
 theme_override_colors/font_color = Color(1, 0.913725, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
-text = "Don't hit the hedges!"
+text = "Don't Hit the Hedges!"
 horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="MessageTimer" type="Timer" parent="HUD"]
-wait_time = 2.0
 one_shot = true
 
 [node name="touch_left" type="TouchScreenButton" parent="HUD"]
-position = Vector2(1, 569)
+position = Vector2(0, 570)
 texture_normal = SubResource("GradientTexture2D_1cc1e")
 shape = SubResource("RectangleShape2D_j0657")
 
+[node name="Sprite2D" type="Sprite2D" parent="HUD/touch_left"]
+modulate = Color(1, 1, 1, 0.313726)
+scale = Vector2(0.952381, 1)
+texture = ExtResource("8_xfxlk")
+centered = false
+
 [node name="touch_right" type="TouchScreenButton" parent="HUD"]
-position = Vector2(199, 570)
+position = Vector2(200, 570)
 texture_normal = SubResource("GradientTexture2D_r8tnl")
 shape = SubResource("RectangleShape2D_pxasx")
+
+[node name="Sprite2D" type="Sprite2D" parent="HUD/touch_right"]
+modulate = Color(1, 1, 1, 0.313726)
+position = Vector2(1.90735e-06, 0)
+scale = Vector2(0.952381, 1.0119)
+texture = ExtResource("9_4mvag")
+centered = false
 
 [node name="StartButton" type="Button" parent="HUD"]
 anchors_preset = 7
@@ -129,10 +141,11 @@ grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("8_veox6")
 theme_override_colors/font_color = Color(1, 0.913725, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0.133333, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 0.913725, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
-text = "Start"
+text = " Let's Go! "
+icon_alignment = 1
 
 [node name="dog_start_pos" type="Marker2D" parent="."]
 position = Vector2(0, 100)
@@ -142,6 +155,8 @@ position = Vector2(0, -406)
 
 [node name="hedge2_start_pos" type="Marker2D" parent="."]
 position = Vector2(0, -812)
+
+[node name="Camera2D" type="Camera2D" parent="."]
 
 [connection signal="start_game" from="HUD" to="." method="new_game"]
 [connection signal="pressed" from="HUD/StartButton" to="HUD" method="_on_start_button_pressed"]
