@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 var scroll_speed = Game_Vars.scroll_speed
 var speed_up = 2
+var end_game = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,7 +12,15 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	# scroll_speed += speed_up * delta
-	scroll_speed = Game_Vars.scroll_speed
-	global_position.y	+= scroll_speed * delta
-	if (global_position.y > 740):
-		global_position.y -= 1480
+	if end_game != true:
+		scroll_speed = Game_Vars.scroll_speed
+		global_position.y	+= scroll_speed * delta
+		if (global_position.y > 740):
+			global_position.y -= 1480
+
+func stop():
+	end_game = true
+
+func start():
+	end_game = false
+

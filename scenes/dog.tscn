@@ -1,63 +1,69 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=3 uid="uid://bh6c6qionff4s"]
 
-[ext_resource path="res://assets/dog.png" type="Texture2D" id=1]
+[ext_resource type="Texture2D" uid="uid://b0frbm5o18axr" path="res://assets/dog.png" id="1"]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id="Animation_ltwux"]
+resource_name = "head_nod"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_5d6fl"]
 length = 0.001
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
-"update": 0,
-"values": [ 0 ]
-}
-
-[sub_resource type="Animation" id=2]
-resource_name = "driving"
-length = 0.4
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PackedFloat32Array( 0, 0.2 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ 0, 1 ]
+"values": [0]
 }
 
-[sub_resource type="RectangleShape2D" id=3]
-size = Vector2( 23, 60.5 )
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xxtfi"]
+_data = {
+"RESET": SubResource("Animation_5d6fl"),
+"head_nod": SubResource("Animation_ltwux")
+}
 
-[sub_resource type="RectangleShape2D" id=4]
-size = Vector2( 21, 58 )
+[sub_resource type="RectangleShape2D" id="3"]
+size = Vector2(56, 125)
+
+[sub_resource type="RectangleShape2D" id="4"]
+size = Vector2(50, 116)
 
 [node name="dog" type="CharacterBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2( 2, 2 )
-texture = ExtResource( 1 )
+scale = Vector2(2, 2)
+texture = ExtResource("1")
 hframes = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "driving"
-anims/RESET = SubResource( 1 )
-anims/driving = SubResource( 2 )
+autoplay = "head_nod"
+libraries = {
+"": SubResource("AnimationLibrary_xxtfi")
+}
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 0, 1.5 )
-shape = SubResource( 3 )
+position = Vector2(0, 1.5)
+shape = SubResource("3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 1 )
-shape = SubResource( 4 )
+position = Vector2(0, 1)
+shape = SubResource("4")

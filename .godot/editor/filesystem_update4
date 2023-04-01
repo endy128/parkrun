@@ -1,4 +1,9 @@
 res://scenes/main.tscn
+res://scenes/hedge.gd
+res://scenes/main.gd
 res://scenes/text_theme.tres
 res://scenes/Control.tscn
-res://scenes/HUD.gd
+res://scenes/dog.tscn
+res://scenes/hedge.tscn
+res://scenes/dog.gd
+res://scenes/floor.gd

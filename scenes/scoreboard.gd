@@ -12,5 +12,6 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	self.text = "Score: " + str(Game_Vars.score)
+func _process(_delta):
+	#self.text = "Score: " + str(Game_Vars.score)
+	pass

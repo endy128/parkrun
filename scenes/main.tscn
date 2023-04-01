@@ -1,30 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://dg8l1b2e5njpa"]
+[gd_scene load_steps=8 format=3 uid="uid://dg8l1b2e5njpa"]
 
 [ext_resource type="PackedScene" path="res://scenes/floor.tscn" id="1"]
-[ext_resource type="PackedScene" path="res://scenes/hedge.tscn" id="2"]
-[ext_resource type="PackedScene" path="res://scenes/dog.tscn" id="3"]
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_phm6y"]
+[ext_resource type="PackedScene" uid="uid://dtgj5yctl0ny4" path="res://scenes/hedge.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://bh6c6qionff4s" path="res://scenes/dog.tscn" id="3"]
 [ext_resource type="Script" path="res://scenes/dog.gd" id="4"]
-[ext_resource type="Script" path="res://scenes/scoreboard.gd" id="5"]
-[ext_resource type="FontFile" uid="uid://b321jc5un1df8" path="res://assets/Purisa-Bold.ttf" id="6"]
 [ext_resource type="Script" path="res://scenes/HUD.gd" id="7_uwhdw"]
 [ext_resource type="Theme" uid="uid://d7ql06mdxoqr" path="res://scenes/text_theme.tres" id="8_veox6"]
 
-[sub_resource type="FontFile" id="3"]
-fallbacks = Array[Font]([ExtResource("6")])
-face_index = null
-embolden = null
-transform = null
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
-
-[sub_resource type="Theme" id="2"]
-default_font = SubResource("3")
-
 [node name="main" type="Node"]
+script = ExtResource("1_phm6y")
 
 [node name="background" type="Sprite2D" parent="."]
 position = Vector2(-1, 3)
@@ -51,14 +36,6 @@ position = Vector2(0, -406)
 position = Vector2(0, 100)
 script = ExtResource("4")
 
-[node name="scoreboard" type="Label" parent="."]
-offset_left = -174.0
-offset_top = 208.0
-offset_right = 169.0
-offset_bottom = 319.0
-theme = SubResource("2")
-script = ExtResource("5")
-
 [node name="HUD" type="CanvasLayer" parent="."]
 script = ExtResource("7_uwhdw")
 
@@ -66,16 +43,17 @@ script = ExtResource("7_uwhdw")
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -174.0
+offset_left = -126.0
 offset_top = 25.0
-offset_right = 174.0
+offset_right = 129.0
+offset_bottom = 112.0
 grow_horizontal = 2
 theme = ExtResource("8_veox6")
 theme_override_colors/font_color = Color(1, 0.913725, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
-text = "Score: 112"
-horizontal_alignment = 1
+text = "Score: 0"
+vertical_alignment = 1
 
 [node name="Message" type="Label" parent="HUD"]
 anchors_preset = 8
@@ -119,3 +97,15 @@ text = "Start"
 [node name="MessageTimer" type="Timer" parent="HUD"]
 wait_time = 2.0
 one_shot = true
+
+[node name="dog_start_pos" type="Marker2D" parent="."]
+position = Vector2(0, 100)
+
+[node name="hedge_start_pos" type="Marker2D" parent="."]
+position = Vector2(0, -406)
+
+[node name="hedge2_start_pos" type="Marker2D" parent="."]
+position = Vector2(0, -812)
+
+[connection signal="start_game" from="HUD" to="." method="new_game"]
+[connection signal="pressed" from="HUD/StartButton" to="HUD" method="_on_start_button_pressed"]
