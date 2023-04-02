@@ -1,14 +1,17 @@
-[gd_scene load_steps=16 format=3 uid="uid://dg8l1b2e5njpa"]
+[gd_scene load_steps=19 format=3 uid="uid://dg8l1b2e5njpa"]
 
 [ext_resource type="PackedScene" path="res://scenes/floor.tscn" id="1"]
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_phm6y"]
 [ext_resource type="PackedScene" uid="uid://dtgj5yctl0ny4" path="res://scenes/hedge.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://bh6c6qionff4s" path="res://scenes/dog.tscn" id="3"]
 [ext_resource type="Script" path="res://scenes/dog.gd" id="4"]
+[ext_resource type="AudioStream" uid="uid://nl6ya1cqrc41" path="res://assets/tyres.wav" id="6_dulqm"]
+[ext_resource type="AudioStream" uid="uid://dd3mulqatsnqx" path="res://assets/stop.wav" id="6_j62ce"]
 [ext_resource type="Script" path="res://scenes/HUD.gd" id="7_uwhdw"]
 [ext_resource type="Theme" uid="uid://d7ql06mdxoqr" path="res://scenes/text_theme.tres" id="8_veox6"]
 [ext_resource type="Texture2D" uid="uid://cel7ooekjjtnu" path="res://assets/chevron-left.svg" id="8_xfxlk"]
 [ext_resource type="Texture2D" uid="uid://dwd6ulgr8blle" path="res://assets/chevron-right.svg" id="9_4mvag"]
+[ext_resource type="AudioStream" uid="uid://baibdus7mqdcc" path="res://assets/the_field_of_dreams.mp3" id="10_g3o6m"]
 
 [sub_resource type="Gradient" id="Gradient_talwd"]
 colors = PackedColorArray(0, 0, 0, 0.313726, 0, 0, 0, 0.313726)
@@ -61,6 +64,13 @@ position = Vector2(0, -406)
 [node name="dog" parent="." instance=ExtResource("3")]
 position = Vector2(0, 100)
 script = ExtResource("4")
+
+[node name="tyre_sound" type="AudioStreamPlayer" parent="dog"]
+stream = ExtResource("6_dulqm")
+volume_db = -7.0
+
+[node name="crash_sound" type="AudioStreamPlayer" parent="dog"]
+stream = ExtResource("6_j62ce")
 
 [node name="HUD" type="CanvasLayer" parent="."]
 script = ExtResource("7_uwhdw")
@@ -157,6 +167,10 @@ position = Vector2(0, -406)
 position = Vector2(0, -812)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_g3o6m")
+autoplay = true
 
 [connection signal="start_game" from="HUD" to="." method="new_game"]
 [connection signal="pressed" from="HUD/StartButton" to="HUD" method="_on_start_button_pressed"]

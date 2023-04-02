@@ -20,6 +20,7 @@ func game_over():
 	get_node("floors/floor").stop()
 	get_node("floors/floor2").stop()
 	$dog.stop()
+	$dog/crash_sound.play()
 	$HUD.show_message("Game Over")
 	$HUD.show_game_over()
 

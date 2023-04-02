@@ -15,10 +15,12 @@ func _process(delta):
 	if(end_game != true):
 		if(Input.is_action_pressed("left") or get_node('/root/main/HUD/touch_left').is_pressed()):
 			direction = -1
-			move_vector.x += -move_strength 
+			move_vector.x += -move_strength
+			play_tyre_sound()
 		if(Input.is_action_pressed("right") or get_node('/root/main/HUD/touch_right').is_pressed()):
 			direction = 1
 			move_vector.x += move_strength
+			play_tyre_sound()
 		set_velocity(move_vector)
 		move_and_slide()	
 			
@@ -34,10 +36,10 @@ func _process(delta):
 
 func rotate_dog():
 	var clamped_turn = clamp(move_vector.x, -60, 60)
-	if (direction < 0):
-		rotation_degrees = clamped_turn / 10
-	if (direction > 0):
-		rotation_degrees = clamped_turn / 10
+	#if (direction < 0):
+	rotation_degrees = clamped_turn / 10
+#	if (direction > 0):
+#		rotation_degrees = clamped_turn / 10
 		
 func stop():
 	end_game = true
@@ -50,3 +52,10 @@ func start(pos):
 	rotation_degrees = 0
 	move_vector = Vector2.ZERO 
 	direction = 0
+
+func play_tyre_sound():
+	var rnd = randi_range(0, 100)
+	print(rnd)
+	if rnd > 98:
+		$tyre_sound.stop()
+		$tyre_sound.play()
