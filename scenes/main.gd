@@ -36,4 +36,3 @@ func new_game():
 	get_node("floors/floor").start()
 	get_node("floors/floor2").start()
 
-

@@ -1,7 +1,10 @@
+Label
+Button
+Control
+TouchScreenButton
 AudioStreamPlayer
 AudioStreamPlayer2D
 Sprite2D
-TouchScreenButton
 ColorRect
 AnimationPlayer
 CollisionShape2D

@@ -19,6 +19,7 @@ func _ready():
 
 func show_game_over():
 	show_message("Game Over")
+	$HelpButton.show()
 	# Wait until the MessageTimer has counted down.
 	await $MessageTimer.timeout
 
@@ -33,9 +34,32 @@ func update_score(score):
 
 func _on_start_button_pressed():
 	$StartButton.hide()
+	$HelpButton.hide()
 	start_game.emit()
 
 func _input(event):
 	if event is InputEventKey:
 		if event.pressed and $StartButton.is_visible_in_tree():
 			_on_start_button_pressed()
+			
+func _on_help_button_pressed():
+	print("Help button pressed")
+
+
+func _on_help_button_toggled(button_pressed):
+	if button_pressed == true:
+		show_help(true)
+	else:
+		show_help(false)
+
+func show_help(state):
+	if state == true:
+		$ScoreLabel.hide()
+		$Message.hide()
+		$StartButton.hide()
+		$HelpText.show()
+	else:
+		$ScoreLabel.show()		
+		$Message.show()
+		$StartButton.show()
+		$HelpText.hide()
