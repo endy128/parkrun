@@ -1,6 +1,8 @@
 bdbec74c6e5bd72edee867077d70896c
-::res://::1681571293
+::res://::1681573593
 export_presets.cfg::TextFile::-1::1681568864::0::1::::<><>::
+icon-bg.png::CompressedTexture2D::30646312777872328::1681573593::1681573594::1::::<><>::
+icon-fg.png::CompressedTexture2D::1921856209148131394::1681573593::1681573594::1::::<><>::
 Playersingleton.gd::GDScript::-1::1681561996::0::1::::<>Node<>::
 ::res://assets/::1681569270
 chevron-left-2.svg::CompressedTexture2D::1403577194602090990::1681569270::1681569270::1::::<><>::
@@ -15,7 +17,7 @@ Purisa.ttf::FontFile::5859674401942517595::1681561996::1681561996::1::::<><>::
 stop.wav::AudioStreamWAV::7428396081398205227::1681561996::1681561996::1::::<><>::
 the_field_of_dreams.mp3::AudioStreamMP3::2403002859844144786::1681561996::1681561996::1::::<><>::
 tyres.wav::AudioStreamWAV::937088248696394948::1681561996::1681561996::1::::<><>::
-::res://export/::1681569270
+::res://export/::1681573239
 ::res://scenes/::1681569270
 Control.tscn::PackedScene::1337935157785646547::1681569138::0::1::::<><>::uid://d7ql06mdxoqr<>res://scenes/HUD.gd
 dog.gd::GDScript::-1::1681561996::0::1::::<>CharacterBody2D<>::
