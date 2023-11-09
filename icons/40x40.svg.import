@@ -2,17 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvqng6aftipyi"
-path="res://.godot/imported/help-circle-outline.svg-86b8d07bb43fb31a0ee91bba58812154.ctex"
+uid="uid://bpoty2g1w17d"
+path="res://.godot/imported/40x40.svg-653b56fb0076ed4a376588dd6a1d91db.ctex"
 metadata={
-"has_editor_variant": true,
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/help-circle-outline.svg"
-dest_files=["res://.godot/imported/help-circle-outline.svg-86b8d07bb43fb31a0ee91bba58812154.ctex"]
+source_file="res://icons/40x40.svg"
+dest_files=["res://.godot/imported/40x40.svg-653b56fb0076ed4a376588dd6a1d91db.ctex"]
 
 [params]
 
@@ -33,6 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=2.0
-editor/scale_with_editor_scale=true
+svg/scale=1.0
+editor/scale_with_editor_scale=false
 editor/convert_colors_with_editor_theme=false
