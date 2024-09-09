@@ -32,15 +32,15 @@ scale = Vector2(2, 2)
 [node name="floor" parent="floors" instance=ExtResource("1")]
 
 [node name="floor2" parent="floors" instance=ExtResource("1")]
-position = Vector2(0, -740)
+position = Vector2(0, -760)
 
 [node name="hedges" type="Node" parent="."]
 
 [node name="hedge2" parent="hedges" instance=ExtResource("2")]
-position = Vector2(0, -812)
+position = Vector2(0, -840)
 
 [node name="hedge" parent="hedges" instance=ExtResource("2")]
-position = Vector2(0, -406)
+position = Vector2(0, -420)
 
 [node name="dog" parent="." instance=ExtResource("3")]
 position = Vector2(0, 100)

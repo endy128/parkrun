@@ -19,7 +19,6 @@ func _ready():
 
 func show_game_over():
 	show_message("Game Over")
-	$HelpButton.show()
 	# Wait until the MessageTimer has counted down.
 	await $MessageTimer.timeout
 
@@ -27,6 +26,7 @@ func show_game_over():
 	$Message.show()
 	# Make a one-shot timer and wait for it to finish.
 	await get_tree().create_timer(1.0).timeout
+	$HelpButton.show()
 	$StartButton.show()
 
 func update_score(score):

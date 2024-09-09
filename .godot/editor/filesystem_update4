@@ -1,9 +1,0 @@
-res://scenes/Control.tscn
-res://scenes/text_theme.tres
-res://scenes/hedge.gd
-res://scenes/main.gd
-res://scenes/floor.gd
-res://Playersingleton.gd
-res://scenes/dog.tscn
-res://scenes/hedge.tscn
-res://scenes/main.tscn

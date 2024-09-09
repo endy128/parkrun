@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var scroll_speed = Game_Vars.scroll_speed
 var move_vector = Vector2(0, +Game_Vars.scroll_speed)
-var screen_height = 740
+var screen_height = 760
 var hedge_height = 72
 var rnd = RandomNumberGenerator.new()
 # var speed_up = 2

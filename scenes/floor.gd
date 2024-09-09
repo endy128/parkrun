@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+var SCREENHEIGHT = 760
 var scroll_speed = Game_Vars.scroll_speed
 var speed_up = 2
 var end_game = true
@@ -15,8 +16,8 @@ func _process(delta):
 	if end_game != true:
 		scroll_speed = Game_Vars.scroll_speed
 		global_position.y	+= scroll_speed * delta
-		if (global_position.y > 740):
-			global_position.y -= 1480
+		if (global_position.y > SCREENHEIGHT):
+			global_position.y -= (SCREENHEIGHT * 2)
 
 func stop():
 	end_game = true
