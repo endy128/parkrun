@@ -30,9 +30,10 @@ scale = Vector2(2, 2)
 [node name="floors" type="Node" parent="."]
 
 [node name="floor" parent="floors" instance=ExtResource("1")]
+position = Vector2(0, 20)
 
 [node name="floor2" parent="floors" instance=ExtResource("1")]
-position = Vector2(0, -760)
+position = Vector2(0, -740)
 
 [node name="hedges" type="Node" parent="."]
 
