@@ -23,4 +23,3 @@ func stop():
 
 func start():
 	end_game = false
-
