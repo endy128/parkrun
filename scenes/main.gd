@@ -35,4 +35,3 @@ func new_game():
 	get_node("hedges/hedge2").start($hedge2_start_pos.position)
 	get_node("floors/floor").start()
 	get_node("floors/floor2").start()
-

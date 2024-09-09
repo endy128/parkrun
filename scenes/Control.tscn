@@ -56,8 +56,8 @@ offset_bottom = -75.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("1")
-theme_override_colors/font_color = Color(1, 0.913725, 0, 1)
 theme_override_colors/font_disabled_color = Color(0, 0.133333, 1, 1)
+theme_override_colors/font_color = Color(1, 0.913725, 0, 1)
 text = "Start"
 
 [node name="MessageTimer" type="Timer" parent="HUD"]

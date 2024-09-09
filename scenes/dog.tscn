@@ -53,10 +53,10 @@ texture = ExtResource("1")
 hframes = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "head_nod"
 libraries = {
 "": SubResource("AnimationLibrary_xxtfi")
 }
+autoplay = "head_nod"
 
 [node name="Area2D" type="Area2D" parent="."]
 
